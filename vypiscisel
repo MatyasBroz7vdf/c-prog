@@ -1,0 +1,18 @@
+
+#include <stdio.h> 
+    int A = 100; 
+int main() { 
+    for(int x=0;x<100;x++)  { 
+     
+    if (A<71 && A>31){A = A - 4;} 
+    A = A -1; 
+    printf("%d\n",A); 
+     
+    if (A < 2){break;} 
+ 
+ 
+                        } 
+    return 0; 
+} 
+ 
+
