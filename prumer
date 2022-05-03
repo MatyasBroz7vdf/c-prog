@@ -1,0 +1,55 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <time.h> 
+ 
+ 
+int nejlepsi = 0; 
+int nejhorsi = 0; 
+float P [20] = {0}; 
+float prumer = 0; 
+// průměr - 1 nejhorší a jednu nejlepší vynechat 
+ 
+ 
+ 
+int main() { 
+    srand(time(NULL)); 
+ 
+ 
+     
+ 
+ 
+ 
+    for(int x=0; x < 20; x ++){ 
+     
+    P[x] = rand()%9; 
+    if(P[x] == 0){P[x] = 1.0;} 
+    if(P[x] == 1){P[x] = 1.5;} 
+    if(P[x] == 2){P[x] = 2.0;} 
+    if(P[x] == 3){P[x] = 2.5;} 
+    if(P[x] == 4){P[x] = 3.0;} 
+    if(P[x] == 5){P[x] = 3.5;} 
+    if(P[x] == 6){P[x] = 4.0;} 
+    if(P[x] == 7){P[x] = 4.5;} 
+    if(P[x] == 8){P[x] = 5.0;} 
+ 
+ 
+    if(nejlepsi > P[x]){ 
+    nejlepsi = P[x]; 
+    } 
+    if(nejhorsi < P[x]){ 
+    nejhorsi = P[x]; 
+    } 
+ 
+ 
+    prumer = prumer + P[x]; 
+    } 
+    prumer = prumer - nejhorsi - nejlepsi; 
+    prumer = prumer / 20; 
+    printf("%.3f",prumer); 
+ 
+ 
+ 
+    return 0; 
+} 
+ 
+
