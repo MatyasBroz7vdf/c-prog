@@ -1,0 +1,23 @@
+#include <stdio.h> 
+ 
+ 
+int main() { 
+    int n = 4; 
+    int Pole[n]; 
+    int a1 = 3; 
+    int d = 3; 
+         
+    Pole[0] = a1; 
+    for(int i=0; i<n;i++){ 
+         
+        Pole[i] = Pole[(i-1)+d]; 
+        printf("%d\n",Pole[i-1+d]); 
+         
+ 
+ 
+ 
+    } 
+    return 0; 
+} 
+ 
+
