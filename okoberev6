@@ -1,0 +1,57 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <time.h> 
+
+
+int karty[52];
+
+
+int mojekarty[15]; 
+
+
+char znak[10];
+
+
+int soucet = 0; 
+
+
+int a = 1;
+
+
+int y;
+
+
+int main() { 
+    srand(time(NULL));
+    for (int x = 1; x < 53; x++){    
+        karty[x] = x;                 
+    }
+
+
+    for (int x = 1; x < 53; x++){    
+        y = karty[rand()%53];
+        karty[y] = 0;        
+        if(y == 0){x = x -1;continue;} //funguje nějak divně - 1x/15 hodí 2 stejná čísla
+        if(y >  39){mojekarty[x] = y - 39; znak[x] = 'l'; continue;}
+        if(y >  26){mojekarty[x] = y - 26; znak[x] = 'p'; continue;}
+        if(y >  13){mojekarty[x] = y - 13; znak[x] = 'k'; continue;}
+        if(y <= 13){mojekarty[x] = y     ; znak[x] = 's'; continue;}              
+    }
+    
+
+
+    for(int x = 0; x < 10; x ++){
+        if (a!= 1){
+        printf("Soucet je %d, chcete dalsi kartu?\n",soucet);
+        scanf("%d",&a);
+        }
+        for(int x=0; x<a; x++){
+        printf("%d  %c\n",mojekarty[x],znak[x]);
+
+
+        }
+    }  
+return 0;
+}
+
+
