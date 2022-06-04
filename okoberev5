@@ -1,0 +1,85 @@
+#include <stdio.h>   
+#include <stdlib.h>   
+#include <time.h>  
+
+
+int prevod(int z){
+if(z == 0){return 0;} 
+       
+        if(z >  39){z = z - 39;return z;}
+        if(z >  26){z = z - 26;return z;}
+        if(z >  13){z = z - 13;return z;}
+        if(z <= 13){          ;return z;}
+
+
+}
+char prevodzn(int z){
+if(z == 0){return 0;} 
+       
+        if(z >  39){b = 'l';return b;}
+        if(z >  26){b = 'p';return b;}
+        if(z >  13){b = 'k';return b;}
+        if(z <= 13){b = 's';return b;}
+
+
+
+
+}
+
+
+
+
+int karty[51];  
+int mojekarty[15] = {0};   
+char znak[15] = {0};  
+int p = 0; 
+int main() {   
+    srand(time(NULL));  
+    for (int x = 0; x < 52; x++){ 
+        //generátor čísel    
+        karty[x] = x+1;
+    }  
+
+
+    for(int x = 0; x < 10; x ++){  
+        // vyber nahodne karty a jeji ulozeni do moje karty
+        p = rand()%52;
+        mojekarty[x] = karty[p];
+        karty[p] = 0;      
+    }
+
+
+    
+    
+    for (int x = 0; x < 52; x++){
+    // prevod karet
+    mojekarty[x] = prevod(mojekarty[x]);
+    znak b[x] = prevodzn(mojekarty[x]);
+    }
+   
+
+
+ for (int x = 0; x < 52; x++){
+    // hlavni program - otazka na dalsi kartu, vždy vyprintovat všechny karty X krát;
+
+
+
+    
+    
+    return 0; 
+    }
+ 
+
+
+}  
+
+
+ 
+ 
+
+
+ 
+
+
+
+
