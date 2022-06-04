@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+
+int kruh(float circle[3],float point[2]){
+    int x = abs (circle[0]-point[0]);
+    int y = abs (circle[1]-point[1]);
+    int D = x * x + y * y;
+    D = sqrt(D);
+    //circle(X Y poloměr)
+    //circle(X Y)
+
+
+
+    if(x=0){
+        
+        return 1;
+    }
+    else
+    {
+
+
+
+        return 0;
+    }
+}
+    float z = 3;
+    float circle[3] = {8,5,-6.4};
+    float point[2] = {8,-4};
+
+
+int main() {
+    z = kruh(circle,point);
+    if(z=1){
+        printf("Bod je uvnitr kruhu");
+    }   
+    else
+    {
+        printf("Bod neni uvnitr kruhu");
+    }
+
+
+
+    return 0;
+}
+
